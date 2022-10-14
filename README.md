@@ -39,8 +39,8 @@ docker-compose up -d --scale whoami=2
 
 Optionally, run the command `docker ps | grep whoami` to verify that you are running two containers of the `traefik/whoami` Docker image.
 ```bash
-ea70f8b70cc0   traefik/whoami   "/whoami"                2 minutes ago   Up 2 minutes   80/tcp                                       simple-traefik-load-balancer_whoami_2
-1864010bfaac   traefik/whoami   "/whoami"                7 minutes ago   Up 7 minutes   80/tcp                                       simple-traefik-load-balancer_whoami_1
+ea70f8b70cc0   traefik/whoami   "/whoami"   2 minutes ago   Up 2 minutes   80/tcp   simple-traefik-load-balancer_whoami_2
+1864010bfaac   traefik/whoami   "/whoami"   7 minutes ago   Up 7 minutes   80/tcp   simple-traefik-load-balancer_whoami_1
 ```
 
 #### Verify the load balancing
@@ -75,4 +75,3 @@ IP: 172.29.0.4
 - https://doc.traefik.io/traefik/
 - https://github.com/traefik/traefik
 - https://hub.docker.com/_/traefik
-
