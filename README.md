@@ -26,6 +26,7 @@ This command pulls two images: [traefik:v2.9](https://hub.docker.com/_/traefik) 
 
 Optionally, run the command `docker ps` to verify that these containers are up and running. Now, open your browser and see Traefik's API rawdata here: http://localhost:8080/api/rawdata
 
+[Traefik's](https://doc.traefik.io/traefik/) dashboard is available at http://localhost:8080/
 
 ### Loadbalancer with 📦📦 containers
 
