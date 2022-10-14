@@ -34,7 +34,7 @@ Optionally, run the command `docker ps` to verify that these containers are up a
 Let's scale up the *whoami* "application" to run with two containers by running the following command: 
 
 ```bash 
-docker-compose up -d --scale whoami=2
+$ docker-compose up -d --scale whoami=2
 ```
 
 Optionally, run the command `docker ps | grep whoami` to verify that you are running two containers of the `traefik/whoami` Docker image.
@@ -60,6 +60,7 @@ IP: 172.29.0.2
 Second time
 
 ```bash
+$ curl -H Host:whoami.docker.localhost http://127.0.0.1
 Hostname: ea70f8b70cc0
 IP: 127.0.0.1
 IP: 172.29.0.4
