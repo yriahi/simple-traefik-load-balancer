@@ -22,12 +22,4 @@ http:
       # By default, routers listen to every entry points
       rule: "Host(`hello.me`)"
       service: whoami
-
-  # services:
-  #   whoami:
-  #     loadBalancer:
-  #       sticky:
-  #         cookie:
-  #           name: my_sticky_cookie_name
-  #           secure: true
-  #           httpOnly: true
+      

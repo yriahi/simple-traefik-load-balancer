@@ -27,3 +27,5 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.entrypoints=web"
       - "traefik.http.routers.whoami.rule=Host(`hello.me`)"
+      - "traefik.http.services.whoami.loadBalancer.sticky.cookie=true"
+      - "traefik.http.services.whoami.loadBalancer.sticky.cookie.name=whoami_cookie_name"
