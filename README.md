@@ -35,13 +35,13 @@ Optionally, run the command `docker ps` to verify that these containers are up a
 
 ## Test
 
-Follow these steps tp test your load balancer:
+Follow these steps to test your load balancer:
 
 - Open your web browser, and visit http://hello.me/. 
 - You will now see e.g. `Hostname: abc1234567890`. 
 - Stop this running container with the command `docker stop abc1234567890`, as displayed on the web browser. 
-- Refresh your browser; you will now get a different hostname. 
-- 🎊 Now, we are successfully running a local simple load balancer with [Traefik](https://doc.traefik.io/traefik/) within our Docker Desktop environment.
+- Refresh your browser and confirm that you see a different hostname. 
+- You are successfully running a simple local load balancer with [Traefik](https://doc.traefik.io/traefik/) in a local Docker environment.
 
 
 
