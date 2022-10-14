@@ -24,7 +24,7 @@ $ docker-compose up -d reverse-proxy
 
 This command pulls two images: [traefik:v2.9](https://hub.docker.com/_/traefik) and [traefik/whoami](https://hub.docker.com/r/traefik/whoami), then starts three containers in Docker Desktop:
 
-- [Traefik](https://doc.traefik.io/traefik/): load balancer.
+- [Traefik](https://doc.traefik.io/traefik/) proxy load balancer.
 -  *whoami*: a simple web application that returns its hostname information with a replica of 2.
 
 Optionally, run the command `docker ps` to verify that these containers are up and running. Now, open your browser and see Traefik's API rawdata here: http://localhost:8080/api/rawdata
