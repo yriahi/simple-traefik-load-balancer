@@ -7,13 +7,12 @@ A quick start guide on how to start a simple load balancer with [Traefik](https:
 ## Pre-requisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-- add `127.0.0.1 hello.me` to your hosts file.
+- Add `127.0.0.1 hello.me` to your `hosts` file.
 
 
 
 ## Up and running
 
-### Loadbalancer with 📦 container
 
 Start the `reverse-proxy` service with the following command(s):
 
@@ -23,30 +22,23 @@ $ cd simple-traefik-load-balancer
 $ docker-compose up -d reverse-proxy
 ```
 
-This command pulls two images: [traefik:v2.9](https://hub.docker.com/_/traefik) and [traefik/whoami](https://hub.docker.com/r/traefik/whoami), then starts two containers in Docker Desktop.  [Traefik](https://doc.traefik.io/traefik/) is the load balancer, and *whoami* is a simple web application that returns its hostname information. 
+This command pulls two images: [traefik:v2.9](https://hub.docker.com/_/traefik) and [traefik/whoami](https://hub.docker.com/r/traefik/whoami), then starts three containers in Docker Desktop:
+
+- [Traefik](https://doc.traefik.io/traefik/): load balancer.
+-  *whoami*: a simple web application that returns its hostname information with a replica of 2.
 
 Optionally, run the command `docker ps` to verify that these containers are up and running. Now, open your browser and see Traefik's API rawdata here: http://localhost:8080/api/rawdata
 
 [Traefik's](https://doc.traefik.io/traefik/) dashboard is available at http://localhost:8080/
 
-### Loadbalancer with 📦📦 containers
+### Verify the load balancing
 
-#### Two containers
+#### Webbrowser
 
-Let's scale up the *whoami* "application" to run with two containers by running the following command: 
+Open your web browser, and visit http://hello.me/. You will now see e.g.`Hostname: abc1234567890`. Stop the second running container of the whoami app. After your refresh your browser, you will now get a different hostname.
 
-```bash 
-$ docker-compose up -d --scale whoami=2
-```
 
-Optionally, run the command `docker ps | grep whoami` to verify that you are running two containers of the `traefik/whoami` Docker image.
-```bash
-ea70f8b70cc0   traefik/whoami   "/whoami"   2 minutes ago   Up 2 minutes   80/tcp   simple-traefik-load-balancer_whoami_2
-1864010bfaac   traefik/whoami   "/whoami"   7 minutes ago   Up 7 minutes   80/tcp   simple-traefik-load-balancer_whoami_1
-```
-
-#### Verify the load balancing
-
+#### CLI
 Run the following command **<u>twice</u>**. Each time, the output will show a different hostname and IP.
 
 First time
@@ -70,6 +62,16 @@ IP: 172.29.0.4
 ```
 
 🎊 Now, we are successfully running a local simple load balancer with [Traefik](https://doc.traefik.io/traefik/) within our Docker Desktop environment.
+
+
+
+## Helpful commands
+
+Let's scale up the *whoami* "application" to run with two containers by running the following command: 
+
+```bash 
+$ docker-compose up -d --scale whoami=4
+```
 
 
 
