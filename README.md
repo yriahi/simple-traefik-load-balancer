@@ -1,6 +1,6 @@
 # Overview
 
-A simple load balancer with Traefik and Docker Compose.
+A quick start guide on how to start a simple load balancer with [Traefik](https://doc.traefik.io/traefik/) and Docker Compose on your local machine.
 
 
 
@@ -14,7 +14,7 @@ A simple load balancer with Traefik and Docker Compose.
 
 ### Loadbalancer with 📦 container
 
-Start the `reverse-proxy` (service) with the following command:
+Start the `reverse-proxy` service with the following command(s):
 
 ```bash
 $ git clone git@github.com:yriahi/simple-traefik-load-balancer.git
@@ -22,14 +22,16 @@ $ cd simple-traefik-load-balancer
 $ docker-compose up -d reverse-proxy
 ```
 
-This will pull two images: `traefik:v2.9` and `traefik/whoami`, then starts two containers in Docker Desktop. Optionally, run the command `docker ps` to verify that these containers are up and running. Now, open your browser and see Traefik's API rawdata here: http://localhost:8080/api/rawdata
+This command pulls two images: [traefik:v2.9](https://hub.docker.com/_/traefik) and [traefik/whoami](https://hub.docker.com/r/traefik/whoami), then starts two containers in Docker Desktop.  [Traefik](https://doc.traefik.io/traefik/) is the load balancer, and *whoami* is a simple web application that returns its hostname information. 
+
+Optionally, run the command `docker ps` to verify that these containers are up and running. Now, open your browser and see Traefik's API rawdata here: http://localhost:8080/api/rawdata
 
 
 ### Loadbalancer with 📦📦 containers
 
 #### Two containers
 
-Let's scale up the `traefik/whoami` "application" to run with two containers by running the following command: 
+Let's scale up the *whoami* "application" to run with two containers by running the following command: 
 
 ```bash 
 docker-compose up -d --scale whoami=2
@@ -43,7 +45,7 @@ ea70f8b70cc0   traefik/whoami   "/whoami"                2 minutes ago   Up 2 mi
 
 #### Verify the load balancing
 
-Run the following command **<u>twice</u>**. Each time, the output will show different hostnames with different IPs.
+Run the following command **<u>twice</u>**. Each time, the output will show a different hostname and IP.
 
 First time
 
@@ -64,7 +66,7 @@ IP: 172.29.0.4
 ...
 ```
 
-🎊 Now, we are successfully running a local simple load balancer with Traefik proxy within our Docker Desktop environment.
+🎊 Now, we are successfully running a local simple load balancer with [Traefik](https://doc.traefik.io/traefik/) within our Docker Desktop environment.
 
 
 
