@@ -31,12 +31,16 @@ Optionally, run the command `docker ps` to verify that these containers are up a
 
 [Traefik's](https://doc.traefik.io/traefik/) dashboard is available at http://localhost:8080/
 
-### Verify the load balancing
 
 
-Open your web browser, and visit http://hello.me/. You will now see e.g. `Hostname: abc1234567890`. Stop the second running container of the whoami app. After your refresh your browser, you will now get a different hostname.
+## Test the load balancing
 
-🎊 Now, we are successfully running a local simple load balancer with [Traefik](https://doc.traefik.io/traefik/) within our Docker Desktop environment.
+- Open your web browser, and visit http://hello.me/. 
+
+- You will now see e.g. `Hostname: abc1234567890`. 
+- Stop this running container with the command `docker stop abc1234567890`, as displayed on the web browser. 
+- Refresh your browser; you will now get a different hostname. 
+- 🎊 Now, we are successfully running a local simple load balancer with [Traefik](https://doc.traefik.io/traefik/) within our Docker Desktop environment.
 
 
 
