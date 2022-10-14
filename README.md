@@ -17,6 +17,8 @@ A simple load balancer with Traefik and Docker Compose.
 Start the `reverse-proxy` (service) with the following command:
 
 ```bash
+$ git clone git@github.com:yriahi/simple-traefik-load-balancer.git
+$ cd simple-traefik-load-balancer
 $ docker-compose up -d reverse-proxy
 ```
 
