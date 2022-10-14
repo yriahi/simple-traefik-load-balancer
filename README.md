@@ -7,6 +7,7 @@ A quick start guide on how to start a simple load balancer with [Traefik](https:
 ## Pre-requisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- add `127.0.0.1 hello.me` to your hosts file.
 
 
 
