@@ -14,7 +14,7 @@ A quick start guide on how to start a simple load balancer with [Traefik](https:
 ## Up and running
 
 
-Start the `reverse-proxy` service with the following command(s):
+Start the services with the following command(s):
 
 ```bash
 $ git clone git@github.com:yriahi/simple-traefik-load-balancer.git
