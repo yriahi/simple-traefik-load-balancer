@@ -33,10 +33,11 @@ Optionally, run the command `docker ps` to verify that these containers are up a
 
 
 
-## Test the load balancing
+## Test
+
+Follow these steps tp test your load balancer:
 
 - Open your web browser, and visit http://hello.me/. 
-
 - You will now see e.g. `Hostname: abc1234567890`. 
 - Stop this running container with the command `docker stop abc1234567890`, as displayed on the web browser. 
 - Refresh your browser; you will now get a different hostname. 
