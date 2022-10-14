@@ -33,33 +33,8 @@ Optionally, run the command `docker ps` to verify that these containers are up a
 
 ### Verify the load balancing
 
-#### Webbrowser
 
-Open your web browser, and visit http://hello.me/. You will now see e.g.`Hostname: abc1234567890`. Stop the second running container of the whoami app. After your refresh your browser, you will now get a different hostname.
-
-
-#### CLI
-Run the following command **<u>twice</u>**. Each time, the output will show a different hostname and IP.
-
-First time
-
-```bash
-$ curl -H Host:whoami.docker.localhost http://127.0.0.1
-Hostname: 1864010bfaac
-IP: 127.0.0.1
-IP: 172.29.0.2
-...
-```
-
-Second time
-
-```bash
-$ curl -H Host:whoami.docker.localhost http://127.0.0.1
-Hostname: ea70f8b70cc0
-IP: 127.0.0.1
-IP: 172.29.0.4
-...
-```
+Open your web browser, and visit http://hello.me/. You will now see e.g. `Hostname: abc1234567890`. Stop the second running container of the whoami app. After your refresh your browser, you will now get a different hostname.
 
 🎊 Now, we are successfully running a local simple load balancer with [Traefik](https://doc.traefik.io/traefik/) within our Docker Desktop environment.
 
